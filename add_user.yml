@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+    - name: print hello world
+      msg: "Hello World from {{ inventory_hostname }}"
+
+    - name: creating required group
+      group:
+        name: "{{ user_name }}"
+        state: present
+
+    - name: create required user
+      user:
+        name: "{{ user_name }}"
+        state: present
+        groups: "{{ user_name }}"
+        shell: /bin/bash
