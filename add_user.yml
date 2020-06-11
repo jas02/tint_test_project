@@ -2,7 +2,8 @@
 - hosts: all
   tasks:
     - name: print hello world
-      msg: "Hello World from {{ inventory_hostname }}"
+      debug:
+        msg: "Hello World from {{ inventory_hostname }}"
 
     - name: creating required group
       group:
