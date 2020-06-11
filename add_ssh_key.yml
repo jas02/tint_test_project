@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - name: add ssh key(s) to the authorized_keys
+      authorized_keys:
+        user: "{{ user_name }}"
+        state: present
+        key: "{{ public_key }}"
+
