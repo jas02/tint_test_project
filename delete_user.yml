@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: print hello world
+      debug:
+        msg: "Hello World from {{ inventory_hostname }}"
+    
+    - name: delete unwanted user
+      user:
+        name: "{{ user_name }}"
+        state: absent
+
